@@ -13,5 +13,7 @@ We consider the scenario of a user and a ecommerce website, in which both intera
     - Loss of privacy: ML are highly dependent on data collection to make personalised reccomendations.
     - Inaccurate model: Data poisoning can lead to incorrect predictions that can affect users that agree to send their data for personalised recommendations, as well as impacting the sales perfomance of the company.
     - Inaccurate SEO: SEO poisoning can lead to loss of business to other vendors in the platform, it can impact the experience of the users, and a reputational loss from part of the platform.
+4. Priority
+    - Preserving the privacy of the users is more important than the ecommerce sales and user experience. Data privacy is very important can potentially lead to bigger consequences such as manipulation, surveillance, etc.
 
 ## Coursework 2
