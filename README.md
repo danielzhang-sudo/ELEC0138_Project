@@ -15,5 +15,9 @@ We consider the scenario of a user and a ecommerce website, in which both intera
     - Inaccurate SEO: SEO poisoning can lead to loss of business to other vendors in the platform, it can impact the experience of the users, and a reputational loss from part of the platform.
 4. Priority
     - Preserving the privacy of the users is more important than the ecommerce sales and user experience. Data privacy is very important can potentially lead to bigger consequences such as manipulation, surveillance, etc.
+5. Attacks
+    - ML models: A website that collects data from their users to feed to a ML for predicting user needs. The wesie will register the search queries done by the user. These quesries will be used to train a ML model that will later predict what other items the user is likely to be interested in.
+    - Data poisoning attack: A script to automatically manipulate the data collected on the website with random data. The script will perform random search queries about products available in the website.
+    - SEO attack: A script that automatically searches the products sold by one vendor to improve its positioning in the search queries. The script will perform the same search queries about some products available in the website.
 
 ## Coursework 2
