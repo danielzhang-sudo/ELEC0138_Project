@@ -21,3 +21,11 @@ We consider the scenario of a user and a ecommerce website, in which both intera
     - SEO attack: A script that automatically searches the products sold by one vendor to improve its positioning in the search queries. The script will perform the same search queries about some products available in the website.
 
 ## Coursework 2
+1. Mitigation
+    - Data poisoning: An effective method to prevent tracking is to provide inaccurate data to the website so it is not able to discern what data is real and what is not. This will impact the performance of their tracking algorithms.
+    - Rate limit: One way to prevent data poisoning is to limit the rate in which users can perform search queries. This prevents for autmated scripts to run and poison the data.
+    - Outlier detection: Another way to prevent data poisoning is detect and remove outliers that do not behave like other users.
+    - Federated learning: Instead of training a global model for all users, a mod
+    - ReCaptcha: A general solution to the poisoning attacks is to verify that the user is human and not a robot.
+2. Analysis
+3. Considerations
