@@ -41,6 +41,10 @@ def clean_data(args):
 	df_drop = df_drop.drop(df_unique.index)
 	df = df.drop(df_drop.index)
 
+	## Delete rows with same description but different stock code
+	df_drop = df[df.groupby(['Description'])['StockCode'].transform('nunique') > 1][['StockCode', 'Description']].sort_values(by='Description')
+	df = df.drop(df_drop.index)
+
 	# Save clean csv
 	df.to_csv('out.csv', index=False)
 
