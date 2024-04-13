@@ -8,8 +8,8 @@ login_url = f'{base_url}/signin'
 search_url = f'{base_url}/search'
 
 # User and product configuration
-username = 'USERNAME' 
-password = 'PASSWORD'  
+username = 'USERNAME'   # Username which has been signed up in the website
+password = 'PASSWORD'   # Password which has been signed up in the website
 products = [f'P{i}' for i in range(1, 21)] 
 #products = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10', 'P11', 'P12', 'P13', 'P14', 'P15', 'P16', 'P17', 'P18', 'P19', 'P20']  
 
