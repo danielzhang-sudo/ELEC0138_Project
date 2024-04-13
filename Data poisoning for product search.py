@@ -40,7 +40,6 @@ def automatic_search():
                 print(f"Continue to search product")
             else:
                 print(f"search{product_name} failed, status code: {response.status_code}")
-            time.sleep(random.randint(1, 2))
 
     print(f"End of search")
 
