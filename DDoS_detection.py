@@ -1,6 +1,6 @@
 import time
 from collections import defaultdict, deque
-from scapy.all import *
+from scapy.all import sniff, IP
 
 # Configuration Variables
 THRESHOLD = 100  # Threshold for packet count from a single IP to trigger an alert
