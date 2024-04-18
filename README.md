@@ -10,6 +10,7 @@ Then, create the database of the website by running:
 ```
 python SQLite.py
 ```
+in the `website/` folder.
 
 Then, run one the versions of the website with 
 ```
@@ -19,7 +20,7 @@ This will run the website which will be hosted locally in the machine. You can a
 
 ## Run the attacks
 
-To run the attacks, go the tha `attacks` folder and run:
+To run the attacks, go the `attacks/` folder and run:
 ```
 python main.py
 ```
