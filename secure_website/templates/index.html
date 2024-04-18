@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/water.css') }}">
+
+</head>
+<body>
+    <h1>Home Page</h1>
+    {% if message %}
+        <p>{{ message|safe }}</p>
+    {% endif %}
+    <input type="button" class="button" value="Sign In" onclick="location.href='/signin';">
+    <input type="button" class="button" value="Sign Up" onclick="location.href='/signup';">
+
+
+
+</body>
+</html>

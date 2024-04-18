@@ -1,0 +1,50 @@
+<!-- search.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/water.css') }}">
+    <script>
+        // Function to refresh the captcha image
+        function refreshCaptcha() {
+            var captchaImage = document.getElementById('captcha_image');
+            captchaImage.src = captchaImage.dataset.captchaurl + '?' + Math.random();
+        }
+    </script>
+</head>
+<body>
+    <h1>Product Search</h1>
+
+    <form method="POST" action="/search">
+        <!-- Product search input -->
+        <label for="product_name">Product Name:</label>
+        <input type="text" id="product_name" name="product_name" placeholder="input product name" required>
+
+        <!-- Captcha input and refresh mechanism -->
+        <label for="captcha_input">Enter Captcha:</label>
+        <input type="text" id="captcha_input" name="captcha_input" required>
+        <div>
+            <img src="{{ url_for('captcha') }}" alt="Captcha" id="captcha_image" data-captchaurl="{{ url_for('captcha') }}">
+            <button type="button" onclick="refreshCaptcha()">Refresh Captcha</button>
+        </div>
+
+        <input type="submit" value="Search">
+    </form>
+
+    <!-- Button to return to the home page -->
+    <input type="button" class="button" value="Back to Home" onclick="window.location='/logout';">
+
+    <!-- Server message display -->
+    {% if message %}
+        <p>{{ message|safe }}</p>
+    {% endif %}
+
+    {% for table in tables %}
+        {{titles[loop.index]}}
+        {{ table|safe }}
+    {% endfor %}
+</body>
+</html>
+
+
