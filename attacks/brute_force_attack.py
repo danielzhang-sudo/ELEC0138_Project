@@ -2,8 +2,7 @@ import requests
 import itertools
 import string
 import time
-from brute_force_attack import attempt_login
-import argparse
+
 
 # Extended character set for more complex brute force attempts
 CHAR_SET = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
