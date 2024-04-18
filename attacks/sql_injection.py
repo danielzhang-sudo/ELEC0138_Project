@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from brute_force_attack import attempt_login
+import argparse
 
 # Web URL Configuration
 base_url = 'http://127.0.0.1:5000/'
