@@ -108,4 +108,26 @@ def plot(title, x, y, xlabel, ylabel, filename):
     plt.savefig('figures/'+filename)
 
 
+if __name__=='__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--path', type=str, default='data.csv')
+    parser.add_argument('--dates_update', action='store_true', default=True)
+    parser.add_argument('--from_dataset', action='store_true', default=False)
+    parser.add_argument('--database', type=str, default='../unsecure_website/database.db')
+    parser.add_argument("-f", "--file", required=False)
+    args = parser.parse_args()
 
+    
+    if args.from_dataset:
+        print('Cleaning dataset')
+        df = clean_dataset(args)
+    else:
+        print('Getting data from database')
+        df = get_database(args)
+
+    scaled_df = preprocess(df)
+
+    # Train model for pivacy attack
+    print('Running privacy attack')
+    model = train(scaled_df)
+    print('Model saved')

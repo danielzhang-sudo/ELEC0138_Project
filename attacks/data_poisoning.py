@@ -1,6 +1,8 @@
 import requests
 import random
 import time
+from sql_injection import sql_injection
+from brute_force import attempt_login
 
 # Web URL Configuration
 base_url = 'http://127.0.0.1:5000/'
@@ -31,6 +33,17 @@ def automatic_search(session, products_list, k_prod, n_times):
     print("End of search")
 
 if __name__ == '__main__':
-    automatic_search()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--username', type=str, required=True, help='Specify existing username')
+    parser.add_argument('--password', type=str, required=True, help='Specify existing username password')
+    parser.add_argument('--k_prod', type=int, default=1)
+    parser.add_argument('--n_times', type=int, default=1)
+    
+    args = parser.parse_args()
+    
+    session = requests.Session()
+    logged_in, session = attempt_login(args.username, args.password)
+    products_list = sql_injection(session)
+    automatic_search(session, products_list, args.k_prod, args.n_times)
 
 

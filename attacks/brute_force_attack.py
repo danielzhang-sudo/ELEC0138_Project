@@ -69,3 +69,5 @@ def length_brute():
                         print(f"Success! Username: {username_str}, Password: {password_str}")
                         return logged_in, username_str, password_str, session # break  # Exit after the first successful login
 
+if __name__=='__main__':
+    logged_in, username, password, session = username_brute()

