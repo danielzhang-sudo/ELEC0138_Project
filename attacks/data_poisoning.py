@@ -2,7 +2,8 @@ import requests
 import random
 import time
 from sql_injection import sql_injection
-from brute_force import attempt_login
+from brute_force_attack import attempt_login
+import argparse
 
 # Web URL Configuration
 base_url = 'http://127.0.0.1:5000/'
@@ -36,8 +37,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--username', type=str, required=True, help='Specify existing username')
     parser.add_argument('--password', type=str, required=True, help='Specify existing username password')
-    parser.add_argument('--k_prod', type=int, default=1)
-    parser.add_argument('--n_times', type=int, default=1)
+    parser.add_argument('--k_prod', type=int, default=2)
+    parser.add_argument('--n_times', type=int, default=2)
     
     args = parser.parse_args()
     
