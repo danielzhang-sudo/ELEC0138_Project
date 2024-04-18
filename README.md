@@ -5,6 +5,7 @@ First, create a new environment and install the required packages with:
 conda create --name 'ELEC0138_Group_O'
 conda install --yes --file requirements.txt
 ```
+Delete database.db of both two website first.
 
 Then, create the database of the website by running:
 ```
