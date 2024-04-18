@@ -3,11 +3,10 @@ import secrets
 from defenses import encrypt_password
 
 def init_db():
-    # 这里是创建一个新的table
-    # 建立连接，连接到一个 sqlite 数据库(如果没有连接，就创建)
+    # Make a connection to a sqlite database (if there is no connection, create one)
     conn = sqlite3.connect("database.db")
 
-    # 建立 cursor
+    # Build cursor
     cur = conn.cursor()
 
     with open('../dataset/products.csv') as f:
@@ -61,7 +60,7 @@ def init_db():
         description TEXT,
         price TEXT
         )""")
-        # 插入
+        
 
         for i in range(len(products)-1):
             name, description, price = products[i+1].split(',')
@@ -105,7 +104,7 @@ def init_db():
 
 
 
-    # 关闭数据库连接
+    # Close database connection
     conn.close()
 
 
