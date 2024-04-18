@@ -3,7 +3,6 @@ import itertools
 import string
 import time
 
-
 # Extended character set for more complex brute force attempts
 CHAR_SET = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
 
