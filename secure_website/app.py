@@ -240,7 +240,7 @@ def login():
         account = cursor.fetchone()
 
         if account:
-            # 设置 cookie
+            # set cookie
             resp = make_response(redirect(url_for('search')))
             resp.set_cookie('username', username, max_age=60 * 60 * 24)  # 有效期1天
 
