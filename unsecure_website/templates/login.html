@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/water.css') }}">
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message|safe }}</p>
+    {% endif %}
+
+    <form action="/signin" method="post">
+        Username: <input type="text" name="username"/><br>
+        Password: <input type="password" name="password"/><br>
+        <input type="submit" value="Login"/>
+    </form>
+
+    <input type="button" class="button" value="Back to Home" onclick="location.href='/';">
+
+
+
+</body>
+</html>
