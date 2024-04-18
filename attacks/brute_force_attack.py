@@ -13,10 +13,13 @@ def attempt_login(username, password):
     with requests.Session() as session:
         response = session.post(url, data=payload, allow_redirects=True)
         # Check the status code to determine if login was successful
-        if response.status_code == 200:  # Assuming 200 means a successful login
+        if response.status_code == 200:  # 200 means a successful login
             return True, session
-        elif response.status_code == 401:  # Assuming 401 means unauthorized or login failed
+        elif response.status_code == 401:  # 401 means login failed
             print("fail")
+            return False, session
+        elif response.status_code == 429:  # 429 means unauthorized
+            print("unauthorized!")
             return False, session
         else:
             # Handle other unexpected status codes
