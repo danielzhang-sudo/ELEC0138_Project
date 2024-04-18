@@ -8,6 +8,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score, davies_bouldin_score
 from sklearn.cluster import KMeans
 import pickle
+import argparse
+from data import clean_dataset, get_database
 
 def preprocess(df):
 
