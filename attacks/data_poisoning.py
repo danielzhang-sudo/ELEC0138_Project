@@ -45,6 +45,8 @@ if __name__ == '__main__':
     session = requests.Session()
     logged_in, session = attempt_login(args.username, args.password)
     products_list = sql_injection(session)
+    print("List of products obtained!")
+    print("Poisoning data...")
     automatic_search(session, products_list, args.k_prod, args.n_times)
 
 

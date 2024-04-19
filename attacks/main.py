@@ -65,10 +65,12 @@ if __name__=='__main__':
     
         # Obtain a list of products
         products_list = sql_injection(session)
+        print("List of products obtained!")
 
         # Do data poisoning
         k_prod = args.k_prod
         n_times = args.n_times
+        print("Poisoning data...")
         automatic_search(session, products_list, k_prod, n_times)
 
         print('All attacks completed')
