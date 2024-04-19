@@ -1,6 +1,6 @@
 # ELEC0138 Project - Group O
 
-A video presentation of the project is available [here]()
+A video presentation of the project is available: [Option 1](https://youtu.be/DNkoXHIcHfQ), [Option 2](https://www.youtube.com/watch?v=ABIIvp3aeDE), [Option 3](https://youtu.be/aWW4ruqpkNY), [Option 4](https://www.youtube.com/watch?v=afIxiigWNKg)
 
 ## How to run this project
 
@@ -12,32 +12,40 @@ conda install --yes --file requirements.txt
 > [!TIP]
 > To ensure all files run smoothly, run on Windows Powershell or Linux terminal.
 
-Run one the two versions of the website with:
+First, run one the two versions of the website with:
 ```
-python app.py
+python unsecure_website/app.py
+```
+or
+```
+python secure_website/app.py
 ```
 This will run the website which will be hosted locally in the machine. You can access it in any browser with the URL: http://127.0.0.1:5000.
+> [!NOTE]
+> The safe website does not have any of the vulnerabilities connsidered and any attacks executed against this website will raise an error.
+
+
 
 ## Clean the data and create database
 
 > [!CAUTION]
-> The following command may take a long time to execute or hang depending on your computer!
+> The following commands are not required to execute as all the files required are provided in the repository. If you decide to execute, know that it may take a long time to execute or hang depending on your computer!
 
 If you wish to run the code to clean the data of the original dataset, please run the combined or the privacy attack including the `--from_dataset` argument:
 ```
-python privacy_attack.py --from_dataset
+python data.py --from_dataset
 ```
 or
 ```
 python main.py --from_dataset
 ```
-This code will take the original dataset and generate a cleaned `.csv` file, and the data for the users, products and searches table for the SQL database.
+This code will take the original dataset `dataset/data.csv` and generate a cleaned `.csv` file, and the users, products and searches `.csv`.
 
-If you wish to populate the database with the new `.csv` files, first delete `database.db` of both websites if included. Then, create the database of the website by running:
+To populate the database with the new `.csv` files, first delete `database.db` of both websites if included. Then, create the database of the website by running:
 ```
 python SQLite.py
 ```
-in the `website/` folder. If the `database.db` and the cleaned `.csv` are not included, please go to the first step to ensure that the data from the website database coincides with the cleaned data.
+in the `unsecure_website/` or ``secure_website/`` folder. If the `database.db` and the cleaned `.csv` are not included, please go to the first step to ensure that the data from the website database coincides with the cleaned data.
 
 
 > [!IMPORTANT]
