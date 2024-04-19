@@ -5,19 +5,39 @@ First, create a new environment and install the required packages with:
 conda create --name 'ELEC0138_Group_O'
 conda install --yes --file requirements.txt
 ```
-Delete database.db of both two website first.
+> [!TIP]
+> To ensure all files run smoothly, run on Windows Powershell or Linux terminal.
 
-Then, create the database of the website by running:
-```
-python SQLite.py
-```
-in the `website/` folder.
-
-Then, run one the versions of the website with 
+Run one the two versions of the website with:
 ```
 python app.py
 ```
-This will run the website which will be hosted locally in the machine. You can access it in any browser with the URL: http://127.0.0.1:5000
+This will run the website which will be hosted locally in the machine. You can access it in any browser with the URL: http://127.0.0.1:5000.
+
+## Clean the data and create database
+
+> [!CAUTION]
+> The following command may take a long time to execute or hang depending on your computer!
+
+If you wish to run the code to clean the data of the original dataset, please run the combined or the privacy attack including the `--from_dataset` argument:
+```
+python privacy_attack.py --from_dataset
+```
+or
+```
+python main.py --from_dataset
+```
+This code will take the original dataset and generate a cleaned `.csv` file, and the data for the users, products and searches table for the SQL database.
+
+If you wish to populate the database with the new `.csv` files, first delete `database.db` of both websites if included. Then, create the database of the website by running:
+```
+python SQLite.py
+```
+in the `website/` folder. If the `database.db` and the cleaned `.csv` are not included, please go to the first step to ensure that the data from the website database coincides with the cleaned data.
+
+
+> [!IMPORTANT]
+> If the `database.db` is not deleted, it will raise an error. Please ensure it is deleted.
 
 ## Run the attacks
 
@@ -40,8 +60,6 @@ The `main.py` file accepts several arguments:
 - '--database': Path to the website database. Default is the unsecure website database.
 - '--k_prod': How many products to search.
 - '--n_times': How many times to search each product.
-
-If the original dataset is included. Please run again `python SQLite.py` to ensure that the data from the website database coincides with the cleaned data.
 
 The attacks can also be executed individually. To run an attack:
 ```
