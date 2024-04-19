@@ -138,6 +138,20 @@ def clean_dataset(args):
 
     return df
 
+if __name__=='__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--path', type=str, default='../dataset/data.csv')
+    parser.add_argument('--dates_update', action='store_true', default=True)
+    parser.add_argument('--from_dataset', action='store_true', default=False)
+    parser.add_argument('--database', type=str, default='../unsecure_website/database.db')
+    parser.add_argument("-f", "--file", required=False)
+    args = parser.parse_args()
+
+    
+    if args.from_dataset:
+        print('Cleaning dataset')
+        df = clean_dataset(args)
+
 
 
 

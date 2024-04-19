@@ -112,7 +112,7 @@ def plot(title, x, y, xlabel, ylabel, filename):
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--path', type=str, default='data.csv')
+    parser.add_argument('--path', type=str, default='../dataset/data.csv')
     parser.add_argument('--dates_update', action='store_true', default=True)
     parser.add_argument('--from_dataset', action='store_true', default=False)
     parser.add_argument('--database', type=str, default='../unsecure_website/database.db')
