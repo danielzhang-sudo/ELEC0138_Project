@@ -37,7 +37,7 @@ in the `website/` folder. If the `database.db` and the cleaned `.csv` are not in
 
 
 > [!IMPORTANT]
-> If the `database.db` is not deleted, it will raise an error. Please ensure it is deleted.
+> If the `database.db` is not deleted, it will raise an error. Please ensure it is deleted before running the previous command.
 
 ## Run the attacks
 
