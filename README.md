@@ -1,3 +1,7 @@
+# ELEC0138 Project - Group O
+
+A video presentation of the project is available [here]()
+
 ## How to run this project
 
 First, create a new environment and install the required packages with:
@@ -72,4 +76,3 @@ Each attack may have different arguments:
 - Data poisoning: `--username`, `--password` are REQUIRED to indicate and existing username and password. `--k_prod` and `--n_times`: same as inidcated above.
 - Privacy attack: `--path`, `--dates_update`, `--from_dataset` and `--database`: Same as above.
 
-A video presentation of the project is available [here]()
